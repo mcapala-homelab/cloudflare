@@ -9,18 +9,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.10
+          python-version: '3.10' 
 
       - name: Installing dependencies
         run: pip install -r requirements.txt
 
       - name: Applying changes
-        uses: pulumi/actions@v3
+        uses: pulumi/actions@v4
         with:
           command: up
           stack-name: mcapala-domain/dns-py
