@@ -3,7 +3,6 @@ import pulumi_cloudflare as cloudflare
 
 config = pulumi.Config()
 
-account_id = config.require('accountId')
 zones = config.require_object("zones")
 
 def create_dns_record(zone_id, entry):
