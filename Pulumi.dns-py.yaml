@@ -1,5 +1,5 @@
 config:
-  mcapala-dnsconfig-py:zones:
+  mcapala-domain:zones:
     - name: mcapala.pl
       records:
         general:
