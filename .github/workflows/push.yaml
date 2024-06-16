@@ -20,7 +20,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Applying changes
-        uses: pulumi/actions@v4
+        uses: pulumi/actions@v5
         with:
           command: up
           stack-name: mcapala/mcapala-domain/dns-py
