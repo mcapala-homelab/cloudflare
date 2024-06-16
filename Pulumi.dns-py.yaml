@@ -1,0 +1,43 @@
+config:
+  mcapala-dnsconfig-py:zones:
+    - name: mcapala.pl
+      records:
+        general:
+          - name: mcapala.pl
+            type: CNAME
+            value: mcapala.zapto.org
+          - name: www
+            type: CNAME
+            value: mcapala.pl
+          - name: nginx.mcapala.pl
+            type: CNAME
+            value: mcapala.zapto.org
+          - name: '*.ngx.mcapala.pl'
+            type: CNAME
+            value: mcapala.zapto.org
+          - name: '*.k8s.mcapala.pl'
+            type: CNAME
+            value: mcapala.zapto.org
+        mail:
+          - name: mail
+            priority: 10
+            type: MX
+            value: mail.mcapala.pl
+          - name: autoconfig
+            type: CNAME
+            value: mail.mcapala.pl
+          - name: autodiscover
+            type: CNAME
+            value: mail.mcapala.pl
+          - name: mail
+            type: CNAME
+            value: mcapala.zapto.org
+          - name: mcapala.pl
+            type: TXT
+            value: v=spf1 mx a -all
+          - name: _dmarc
+            type: TXT
+            value: v=DMARC1; p=quarantine; rua=mailto:6bdf0ed6ff334724a2a6d6f6c20422e5@dmarc-reports.cloudflare.net,mailto:michal@mcapala.pl; ruf=mailto:michal@mcapala.pl; adkim=r; aspf=r; pct=55; sp=quarantine
+          - name: dkim._domainkey
+            type: TXT
+            value: v=DKIM1;k=rsa;t=s;s=email;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo55jrAem8+XhLIlwz3zcN43k1g7zwrZ2x1AqnKWjKe9ONEdlQ0s4GshRlEP9eK7ivAh3RdurSiaeVM2yOT446R9O/BJuDlqPhWd6n8JrNyu0tMChsoNkmTmCzCYBMoLZbDEHDDV1yd0U0NMAzgVH2lQ/qN9uAKBsN/lXDePU8Gj55im/lsxB7lYg5KNH1jd5Kl3ptbxTqqPK/b0JnZkJskMC9T+LVEOnZs2qbBiX/8aF/bd6EyWpXxstnnDKuyBzMxyuQ8k3b8UUrXjqHck4nO6zVZJq8a4E4aGmntjasSF4NXm8v3y7Z0yd+5J1j6ESHPir9CtsFld3qV5itQm8AQIDAQAB
